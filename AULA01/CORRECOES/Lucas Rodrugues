@@ -1,0 +1,35 @@
+    <!DOCTYPE html> <!-- Define a versão do HTML como HTML5 -->
+    <html lang="pt-BR"> <!-- Inicia o documento HTML configurado em Português -->
+    <head> <!-- Início do cabeçalho da página -->
+    <meta charset="UTF-8"> <!-- Configura a codificação de caracteres para UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Garante responsividade para dispositivos móveis -->
+    <title>Ficha Interativa do Aluno</title> <!-- Título exibido na aba do navegador -->
+    <style> /* Início da estilização CSS interna */
+        * { margin: 0; padding: 0; box-sizing: border-box; } /* Zera as margens e ajusta o cálculo de dimensões */
+        body { min-height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #eef2f5; font-family: Arial, sans-serif; color: #333; } /* Ocupa 100% da tela e centraliza o conteúdo com Flexbox */
+        main { background-color: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 320px; } /* Cartão com cor própria, sombra, cantos arredondados e espaçamento interno */
+        h1 { font-size: 1.4rem; color: #1a73e8; margin-bottom: 15px; text-align: center; } /* Estilização do título principal */
+        p { font-size: 0.95rem; margin: 8px 0; border-bottom: 1px solid #eee; padding-bottom: 4px; } /* Estilização dos parágrafos de resultado */
+    </style>
+    </head> <!-- Fim do cabeçalho -->
+    <body> <!-- Início do corpo do documento -->
+    <main> <!-- Container principal em formato de cartão -->
+        <h1>Ficha do Aluno</h1> <!-- Título dentro do cartão -->
+    <script> // Início do script JavaScript
+    window.alert("Seja bem-vindo à Ficha Interativa do Aluno!"); // Exibe mensagem de boas-vindas
+    if (window.confirm("Deseja iniciar o cadastro do aluno?")) { // Pergunta ao usuário se deseja iniciar
+        var nome = window.prompt("Digite o nome completo do aluno:"); // Solicita o nome completo
+        var n1 = Number(window.prompt("Digite o primeiro número inteiro:")); // Solicita e converte o 1º número
+        var n2 = Number(window.prompt("Digite o segundo número inteiro:")); // Solicita e converte o 2º número
+        var soma = n1 + n2; // Realiza a soma dos dois números
+        window.alert(`Maiúsculo: ${nome.toUpperCase()}`); // Exibe o nome em letras maiúsculas
+        window.alert(`Minúsculo: ${nome.toLowerCase()}`); // Exibe o nome em letras minúsculas
+        window.alert(`Caracteres: ${nome.length}`); // Exibe a quantidade total de caracteres
+        window.alert(`Soma: ${n1} + ${n2} = ${soma}`); // Exibe o resultado formatado da soma
+    } else { // Executado caso o usuário cancele
+        window.alert("Cadastro cancelado."); // Exibe mensagem de cancelamento
+    } // Fim da verificação condicional
+    </script>
+    </main> 
+    </body> 
+    </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Meu Mundo VR Interativo</title>
+  
+  <!-- Biblioteca A-Frame correta para o 3D funcionar -->
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+  <!-- CSS para criar a caixa de texto na tela -->
+  <style>
+    .interface-usuario {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 999;
+      font-family: sans-serif;
+      color: white;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 8px;
+      pointer-events: none;
+    }
+    h1 { margin: 0 0 5px 0; font-size: 18px; }
+    p { margin: 0; font-size: 14px; opacity: 0.9; }
+  </style>
+</head>
+<body>
+
+  <!-- Interface CSS -->
+  <div class="interface-usuario">
+    <h1>Mundo VR Pronto!</h1>
+    <p>💻 Computador: Use o mouse para olhar e W, A, S, D para andar.</p>
+    <p>🕶️ Óculos VR: Use os controles e clique em "Enter VR".</p>
+  </div>
+
+  <!-- Cenário 3D em HTML -->
+  <a-scene>
+    <!-- Câmera com cursor de interação -->
+    <a-camera>
+      <a-cursor color="#FF5733"></a-cursor>
+    </a-camera>
+
+    <!-- O Cubo Interativo -->
+    <a-box id="meuCubo" 
+           position="0 1.5 -3" 
+           rotation="0 45 0" 
+           color="#4CC3D9" 
+           animation="property: rotation; to: 0 405 0; loop: true; dur: 5000; easing: linear">
+    </a-box>
+
+    <!-- Esfera Decorativa -->
+    <a-sphere position="2 1.25 -4" radius="0.75" color="#EF2D5E"></a-sphere>
+
+    <!-- Chão e Céu -->
+    <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#333"></a-plane>
+    <a-sky color="#111122"></a-sky>
+  </a-scene>
+
+  <!-- Lógica em JavaScript -->
+  <script>
+    const cubo = document.querySelector('#meuCubo');
+
+    // Altera a cor para amarelo ao passar o cursor/olhar
+    cubo.addEventListener('mouseenter', function () {
+      cubo.setAttribute('color', '#FFC65D');
+    });
+
+    // Retorna para a cor original ao tirar o cursor
+    cubo.addEventListener('mouseleave', function () {
+      cubo.setAttribute('color', '#4CC3D9');
+    });
+  </script>
+
+</body>
+</html>
